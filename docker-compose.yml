@@ -1,0 +1,45 @@
+services:
+  uffmonopoly:
+    container_name: UFFMonopoly-webapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=${DB_HOST};Port=${DB_PORT};Database=${DB_NAME};Username=${DB_USER};Password=${DB_PASSWORD}
+
+    ports:
+      - "8399:8080"
+      - "8748:443"
+    working_dir: /app
+    command: [ "dotnet", "UFF.Monopoly.dll" ]
+    depends_on:
+      - postgres_UFFMonopoly
+
+    networks:
+      - UFFMonopoly_network
+
+    volumes:
+      - /UFFMonopoly/volumes/WebApp:/app
+      - /UFFMonopoly/volumes/shared_data:/shared
+    restart: always
+
+  postgres_UFFMonopoly:
+    image: postgres:latest
+    container_name: postgres_UFFMonopoly
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+
+    ports:
+      - "5433:5432" # Alterar porta externa para evitar conflito
+    networks:
+      - UFFMonopoly_network
+    volumes:
+      - /uff/pg_db_uff:/var/lib/postgresql/data
+    restart: always
+
+networks:
+  UFFMonopoly_network:
+    name: UFFMonopoly_network
+    driver: bridge

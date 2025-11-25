@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/docker-niunutri/CopilotIndices/17.12.21.54468/CodeChunks.db
+/.vs/docker-niunutri/CopilotIndices/17.12.21.54468/CodeChunks.db-shm
+/.vs/docker-niunutri/CopilotIndices/17.12.21.54468/CodeChunks.db-wal
+/.vs/docker-niunutri/CopilotIndices/17.12.21.54468/SemanticSymbols.db
+/.vs/docker-niunutri/CopilotIndices/17.12.21.54468/SemanticSymbols.db-shm
+/.vs/docker-niunutri/CopilotIndices/17.12.21.54468/SemanticSymbols.db-wal
+/.vs/docker-niunutri/FileContentIndex/c2892836-2d4d-49a0-9b7d-23b9a87b374d.vsidx
+/.vs/docker-niunutri/v17/.wsuo
+/.vs/docker-niunutri/v17/DocumentLayout.backup.json
+/.vs/docker-niunutri/v17/DocumentLayout.json
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
