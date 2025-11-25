@@ -22,7 +22,6 @@ services:
       - /UFFMonopoly/volumes/WebApp:/app
       - /UFFMonopoly/volumes/shared_data:/shared
     restart: always
-
   postgres_UFFMonopoly:
     image: postgres:latest
     container_name: postgres_UFFMonopoly
